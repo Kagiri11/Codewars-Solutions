@@ -10,7 +10,7 @@ fun main() {
 
     val name = "Charles"
 
-    println(getCount(name))
+    println(makeComplement("ATTGC"))
 }
 
 
@@ -43,3 +43,15 @@ fun getCount(str:String):Int{
     return str.filter { "aeiou".contains(it) }.map { it }.count()
 }
 
+fun makeComplement(dna : String) : String {
+
+    return dna.map {
+        when(it.toString()){
+            "A"-> "T"
+            "T"->"A"
+            "C"->"G"
+            "G"->"C"
+            else -> ""
+        }
+    }.joinToString("")
+}
