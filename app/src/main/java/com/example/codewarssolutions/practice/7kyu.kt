@@ -1,7 +1,7 @@
 package com.example.codewarssolutions.practice
 
 /**
- * This is the solutions to katas of this stage
+ * This is the solutions to katas of stage seven
  */
 fun main() {
     val strarr = listOf("tree", "foling", "trashy", "blue", "abcdef", "uvwxyz")
@@ -9,14 +9,13 @@ fun main() {
     val nums = arrayOf(0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14)
 
     val name = "Charles"
+    println("Brave".split("a")[0])
 
-    println(makeComplement("ATTGC"))
 }
 
 
 fun longestConsec(strarr: Array<String>, k: Int): String {
     val newList = mutableListOf<String>()
-
     return " "
 }
 
@@ -44,7 +43,6 @@ fun getCount(str:String):Int{
 }
 
 fun makeComplement(dna : String) : String {
-
     return dna.map {
         when(it.toString()){
             "A"-> "T"

@@ -1,12 +1,8 @@
 package com.example.codewarssolutions.practice
 
 fun main() {
-    val numbers = "8 3 -5 42 -1 0 0 -9 4 7 4 -4"
-    val num2 = numbers.split(" ").map {
-        it.toInt()
-    }
-    println(num2)
-
+    val name = "Eunice".splitToSequence("un").joinToString().trim().lines()
+    println(name)
 }
 
 fun myFun(numbers: String):String {
