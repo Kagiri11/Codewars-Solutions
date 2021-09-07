@@ -4,13 +4,64 @@ package com.example.codewarssolutions.practice
  * This is the solutions to katas of stage seven
  */
 fun main() {
-    val strarr = listOf("tree", "foling", "trashy", "blue", "abcdef", "uvwxyz")
-    val artist = "14 years old"
-    val nums = arrayOf(0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14)
+    val mit = mapOf("tim" to 2, "jim" to 4, "randy" to 0, "sandy" to 5, "andy" to 8, "katie" to 6, "laura" to 2, "saajid" to 2, "alex" to 3, "john" to 2, "mr" to 8)
+    val boss = "john"
+    println(outed(mit,boss))
 
-    val name = "Charles"
-    println("Brave".split("a")[0])
+}
 
+fun newAvg(a:DoubleArray, navg:Double):Long {
+    val result = ((a.size+1)*navg)-a.sum()
+    return if (result<=0) throw IllegalArgumentException() else (result).toLong()
+}
+
+fun outed(meet: Map<String, Int>, boss: String): String {
+    return if ((meet.values.sum()+ meet[boss]!!)/meet.count()>5) "Nice Work Champ!" else "Get Out Now!"
+}
+
+fun GroupTotals(strArr: Array<String>): Int {
+    val mapArray = mutableListOf<Map<String,Int>>()
+    val listOfKeys= mutableListOf<String>()
+    val listOfValues= mutableListOf<Int>()
+    for(item in strArr){
+        val elementKey  = item.substringBefore(":")
+        val elementValue  = item.substringAfter(":").toInt()
+        listOfKeys.add(elementKey)
+        listOfValues.add(elementValue)
+        val pair = Pair(elementKey,elementValue)
+        val mapOne = mapOf(pair)
+        mapArray.add(mapOne)
+    }
+   println( listOfKeys.toSet())
+   println( listOfValues.toSet())
+
+    return mapArray.sumBy {
+        val ints = it.values.sum()
+        ints
+    }
+}
+
+fun alphabetWar(fight: String): String {
+    var leftCount = 0
+    var rightCount = 0
+    for(leta in fight){
+        when(leta){
+            'w' -> leftCount+=4
+            'p' -> leftCount+=3
+            'b' -> leftCount+=2
+            's' -> leftCount+=1
+            'm' -> rightCount+=4
+            'q' -> rightCount+=3
+            'd' -> rightCount+=2
+            'z' -> rightCount+=1
+        }
+    }
+    return when{
+        leftCount>rightCount -> "Left side wins!"
+        leftCount<rightCount -> "Right side wins!"
+        else -> " Let's fight again!"
+
+    }
 }
 
 
