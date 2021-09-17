@@ -4,9 +4,10 @@ package com.example.codewarssolutions.practice
  * This is the solutions to katas of stage seven
  */
 fun main() {
-    val intArr = intArrayOf(66, 101)
-    val limit = 200
-    println(smallEnough(intArr,limit))
+    val names = "Charles"
+    val result = names.groupBy(Char::toLowerCase).count {it.value.count() > 1}
+
+    println(result)
 
 }
 
@@ -129,3 +130,6 @@ fun smallEnough(a : IntArray, limit : Int) : Boolean {
     return result
 }
 
+fun duplicateCount(text: String): Int {
+    return 0
+}
