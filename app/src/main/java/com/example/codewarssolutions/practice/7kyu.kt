@@ -4,9 +4,8 @@ package com.example.codewarssolutions.practice
  * This is the solutions to katas of stage seven
  */
 fun main() {
-    val mit = mapOf("tim" to 2, "jim" to 4, "randy" to 0, "sandy" to 5, "andy" to 8, "katie" to 6, "laura" to 2, "saajid" to 2, "alex" to 3, "john" to 2, "mr" to 8)
-    val boss = "john"
-    println(outed(mit,boss))
+    val testOne = arrayOf("codewars", "abc", "xyz")
+    println(nameValue(testOne).toString())
 
 }
 
@@ -103,4 +102,22 @@ fun makeComplement(dna : String) : String {
             else -> ""
         }
     }.joinToString("")
+}
+
+/**This code matches the characters contained in the string parameter to the corresponding numerical number
+ * it then adds aup the values and multiplies the result by the index of the string in the array
+ * Let's do this ;)
+ */
+
+fun nameValue(arr: Array<String>): IntArray{
+    val result = mutableListOf<Int>()
+    arr.forEach { str->
+        var strValue = 0
+        val res = arr.indexOf(str)+1
+        str.forEach {char->
+            ('a'..'z').zip((1..26)).forEach { pair -> if (char == pair.first){ strValue+=pair.second } }
+        }
+        result.add(strValue*res)
+    }
+    return result.toIntArray()
 }
