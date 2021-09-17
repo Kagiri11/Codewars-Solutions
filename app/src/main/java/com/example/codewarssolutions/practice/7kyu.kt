@@ -4,8 +4,9 @@ package com.example.codewarssolutions.practice
  * This is the solutions to katas of stage seven
  */
 fun main() {
-    val testOne = arrayOf("codewars", "abc", "xyz")
-    println(nameValue(testOne).toString())
+    val intArr = intArrayOf(66, 101)
+    val limit = 200
+    println(smallEnough(intArr,limit))
 
 }
 
@@ -121,3 +122,10 @@ fun nameValue(arr: Array<String>): IntArray{
     }
     return result.toIntArray()
 }
+
+fun smallEnough(a : IntArray, limit : Int) : Boolean {
+    var result = true
+    a.forEach { if (it>limit) result=false }
+    return result
+}
+

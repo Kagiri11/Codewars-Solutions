@@ -1,8 +1,11 @@
 package com.example.codewarssolutions.practice
 
 fun main() {
-    val name = "Eunice".splitToSequence("un").joinToString().trim().lines()
-    println(name)
+    val myList = listOf(4,6,84,2,)
+    val result = myList.all {
+        it%2==0
+    }
+    println(result)
 }
 
 fun myFun(numbers: String):String {
